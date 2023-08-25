@@ -3,7 +3,6 @@ pragma solidity ^0.8.1;
 
 // a record of student in a university
 // allows only principal to admit, expell
-
 contract StudentDetails {
     address public principal;
     address public deployer;
@@ -14,9 +13,7 @@ contract StudentDetails {
         string gender;
     }
     uint id; //total numba of student which is 0 here
-
     mapping(uint => Student) _student;
-
     event Admitted(string indexed _name, uint _age, string _gender, uint _id);
 
     constructor(address _prin) {
@@ -39,7 +36,6 @@ contract StudentDetails {
         newStudent.name = _name;
         newStudent.age = _age;
         newStudent.gender = _gender;
-
         emit Admitted(_name, _age, _gender, id);
     }
 
